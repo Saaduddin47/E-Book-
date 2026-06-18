@@ -90,8 +90,15 @@ npm install
 Copy the example file and fill in your credentials:
 
 ```bash
-cp .env.example .env
+cp env.example .env
 ```
+
+> Tip: For quick local previews you can run the app before configuring anything.
+> The landing page falls back to built-in placeholder content if the database
+> isn't reachable, magic-link URLs are printed to the server console when
+> `RESEND_API_KEY` is missing, and (outside production) checkout simulates a
+> successful purchase when `ZIINA_API_TOKEN` is missing so you can test the
+> full flow end to end.
 
 | Variable | Description |
 | --- | --- |
@@ -112,9 +119,15 @@ cp .env.example .env
 ### Database setup
 
 ```bash
-npx prisma migrate dev
-npx prisma db seed
+npm run db:migrate   # create tables (or: npm run db:push)
+npm run db:seed      # seed product, content, and the ADMIN_EMAIL admin user
 ```
+
+### Storage setup (for the eBook file)
+
+In Supabase, create a **private** Storage bucket whose name matches
+`SUPABASE_STORAGE_BUCKET` (default `ebook`). The app uploads the PDF/cover there
+from the admin dashboard and serves them only through short-lived signed URLs.
 
 ### Run locally
 
