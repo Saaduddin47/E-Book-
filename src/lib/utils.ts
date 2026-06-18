@@ -11,8 +11,8 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatPrice(
   amountMinor: number,
-  currency = "AED",
-  locale = "en-AE",
+  currency = "USD",
+  locale = "en-US",
 ): string {
   try {
     return new Intl.NumberFormat(locale, {

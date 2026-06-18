@@ -16,13 +16,13 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "The Complete Guide - Instant Digital Download",
+  title: "Why Pushing Harder Is Making It Worse — And What to Do Instead",
   description:
-    "A practical, step-by-step digital guide. Instant PDF download, read on any device.",
+    "The in-the-moment guide for chronic constipation sufferers. Instant PDF download, read on any device.",
   openGraph: {
-    title: "The Complete Guide - Instant Digital Download",
+    title: "Why Pushing Harder Is Making It Worse — And What to Do Instead",
     description:
-      "A practical, step-by-step digital guide. Instant PDF download, read on any device.",
+      "The in-the-moment guide for chronic constipation sufferers. Instant PDF download, read on any device.",
     type: "website",
   },
 };

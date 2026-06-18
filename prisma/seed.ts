@@ -18,12 +18,13 @@ async function main() {
     update: {},
     create: {
       slug: "main-ebook",
-      title: "The Complete Guide",
-      subtitle: "A practical, step-by-step digital guide",
-      description: "Replace this description with your eBook details from /admin.",
-      priceCents: 5900, // AED 59.00
-      compareAtCents: 45900, // AED 459.00
-      currency: "AED",
+      title: "Why Pushing Harder Is Making It Worse — And What to Do Instead",
+      subtitle: "The in-the-moment guide for chronic constipation sufferers",
+      description:
+        "A complete, no-fluff digital guide built around the moment that matters most. Instant PDF download, read on any device.",
+      priceCents: 1700, // $17.00
+      compareAtCents: 12700, // $127.00
+      currency: "USD",
       active: true,
     },
   });
