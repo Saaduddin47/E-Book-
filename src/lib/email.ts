@@ -32,10 +32,16 @@ export async function sendMagicLinkEmail({
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM ?? "onboarding@resend.dev";
 
-  // In development without a key, log the link so you can still sign in.
-  if (!apiKey) {
+  // Treat a missing or placeholder key as "not configured" so dev still works.
+  const isConfigured =
+    Boolean(apiKey) &&
+    !apiKey!.includes("xxxx") &&
+    apiKey !== "re_xxxxxxxxxxxxxxxxxxxx";
+
+  // Without a real key, log the link so you can still sign in during dev.
+  if (!isConfigured) {
     console.warn(
-      `\n[email] RESEND_API_KEY not set. Magic link for ${to}:\n${url}\n`,
+      `\n[email] RESEND_API_KEY not configured. Magic link for ${to}:\n${url}\n`,
     );
     return;
   }
